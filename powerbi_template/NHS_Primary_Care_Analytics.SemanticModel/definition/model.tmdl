@@ -1,0 +1,34 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["mart_p7_executive","mart_p7_demographics","mart_p7_registrations","mart_p7_appointments","mart_p7_record_quality","mart_p7_inbox_aging","mart_p7_admin_tasks","mart_p7_workflow_queues","mart_p7_qof_demo","mart_p7_data_quality","mart_p7_audit_activity","mart_p7_demo_cohorts"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table mart_p7_executive
+ref table mart_p7_demographics
+ref table mart_p7_registrations
+ref table mart_p7_appointments
+ref table mart_p7_record_quality
+ref table mart_p7_inbox_aging
+ref table mart_p7_admin_tasks
+ref table mart_p7_workflow_queues
+ref table mart_p7_qof_demo
+ref table mart_p7_data_quality
+ref table mart_p7_audit_activity
+ref table mart_p7_demo_cohorts
+ref table DateTableTemplate_eb9cbc81-c958-4270-80ca-1660f6002eb9
+ref table LocalDateTable_598802f0-389e-4e34-bdd8-ef566135c508
+ref table LocalDateTable_21f192aa-95f4-4ce7-9538-c952565f4558
+ref table LocalDateTable_acabaad8-d5ab-4e40-b1e1-ec97e13115d2
+ref table LocalDateTable_4dec7bd5-0d43-4213-8740-8579fa285451
+ref table LocalDateTable_6d165ae0-f0d9-476d-b362-c5af70e56f13
+ref table LocalDateTable_543f85a3-6dc3-4d61-aa1a-e35925e7cb63
+

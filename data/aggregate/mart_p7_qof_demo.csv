@@ -1,0 +1,37 @@
+measurement_month,indicator_id,indicator_name,denominator_count,numerator_count,demo_percent,indicator_classification
+2025-11-01,DEMO-QOF-01,Demonstration monitoring register,166,130,78.31,SIMULATED - NOT OFFICIAL QOF
+2025-11-01,DEMO-QOF-02,Demonstration asthma review register,198,166,83.84,SIMULATED - NOT OFFICIAL QOF
+2025-11-01,DEMO-QOF-03,Demonstration diabetes review register,192,152,79.17,SIMULATED - NOT OFFICIAL QOF
+2025-12-01,DEMO-QOF-01,Demonstration monitoring register,177,148,83.62,SIMULATED - NOT OFFICIAL QOF
+2025-12-01,DEMO-QOF-02,Demonstration asthma review register,209,172,82.30,SIMULATED - NOT OFFICIAL QOF
+2025-12-01,DEMO-QOF-03,Demonstration diabetes review register,200,157,78.50,SIMULATED - NOT OFFICIAL QOF
+2026-01-01,DEMO-QOF-01,Demonstration monitoring register,189,130,68.78,SIMULATED - NOT OFFICIAL QOF
+2026-01-01,DEMO-QOF-02,Demonstration asthma review register,218,153,70.18,SIMULATED - NOT OFFICIAL QOF
+2026-01-01,DEMO-QOF-03,Demonstration diabetes review register,208,160,76.92,SIMULATED - NOT OFFICIAL QOF
+2026-02-01,DEMO-QOF-01,Demonstration monitoring register,202,166,82.18,SIMULATED - NOT OFFICIAL QOF
+2026-02-01,DEMO-QOF-02,Demonstration asthma review register,227,162,71.37,SIMULATED - NOT OFFICIAL QOF
+2026-02-01,DEMO-QOF-03,Demonstration diabetes review register,216,142,65.74,SIMULATED - NOT OFFICIAL QOF
+2026-03-01,DEMO-QOF-01,Demonstration monitoring register,213,170,79.81,SIMULATED - NOT OFFICIAL QOF
+2026-03-01,DEMO-QOF-02,Demonstration asthma review register,237,176,74.26,SIMULATED - NOT OFFICIAL QOF
+2026-03-01,DEMO-QOF-03,Demonstration diabetes review register,227,180,79.30,SIMULATED - NOT OFFICIAL QOF
+2026-04-01,DEMO-QOF-01,Demonstration monitoring register,224,146,65.18,SIMULATED - NOT OFFICIAL QOF
+2026-04-01,DEMO-QOF-02,Demonstration asthma review register,246,183,74.39,SIMULATED - NOT OFFICIAL QOF
+2026-04-01,DEMO-QOF-03,Demonstration diabetes review register,235,157,66.81,SIMULATED - NOT OFFICIAL QOF
+2026-05-01,DEMO-QOF-01,Demonstration monitoring register,234,161,68.80,SIMULATED - NOT OFFICIAL QOF
+2026-05-01,DEMO-QOF-02,Demonstration asthma review register,266,183,68.80,SIMULATED - NOT OFFICIAL QOF
+2026-05-01,DEMO-QOF-03,Demonstration diabetes review register,240,185,77.08,SIMULATED - NOT OFFICIAL QOF
+2026-06-01,DEMO-QOF-01,Demonstration monitoring register,244,184,75.41,SIMULATED - NOT OFFICIAL QOF
+2026-06-01,DEMO-QOF-02,Demonstration asthma review register,275,213,77.45,SIMULATED - NOT OFFICIAL QOF
+2026-06-01,DEMO-QOF-03,Demonstration diabetes review register,251,185,73.71,SIMULATED - NOT OFFICIAL QOF
+2026-07-01,DEMO-QOF-01,Demonstration monitoring register,261,188,72.03,SIMULATED - NOT OFFICIAL QOF
+2026-07-01,DEMO-QOF-02,Demonstration asthma review register,292,206,70.55,SIMULATED - NOT OFFICIAL QOF
+2026-07-01,DEMO-QOF-03,Demonstration diabetes review register,260,216,83.08,SIMULATED - NOT OFFICIAL QOF
+2026-08-01,DEMO-QOF-01,Demonstration monitoring register,273,225,82.42,SIMULATED - NOT OFFICIAL QOF
+2026-08-01,DEMO-QOF-02,Demonstration asthma review register,308,211,68.51,SIMULATED - NOT OFFICIAL QOF
+2026-08-01,DEMO-QOF-03,Demonstration diabetes review register,277,208,75.09,SIMULATED - NOT OFFICIAL QOF
+2026-09-01,DEMO-QOF-01,Demonstration monitoring register,284,217,76.41,SIMULATED - NOT OFFICIAL QOF
+2026-09-01,DEMO-QOF-02,Demonstration asthma review register,331,250,75.53,SIMULATED - NOT OFFICIAL QOF
+2026-09-01,DEMO-QOF-03,Demonstration diabetes review register,288,211,73.26,SIMULATED - NOT OFFICIAL QOF
+2026-10-01,DEMO-QOF-01,Demonstration monitoring register,297,242,81.48,SIMULATED - NOT OFFICIAL QOF
+2026-10-01,DEMO-QOF-02,Demonstration asthma review register,346,240,69.36,SIMULATED - NOT OFFICIAL QOF
+2026-10-01,DEMO-QOF-03,Demonstration diabetes review register,298,238,79.87,SIMULATED - NOT OFFICIAL QOF

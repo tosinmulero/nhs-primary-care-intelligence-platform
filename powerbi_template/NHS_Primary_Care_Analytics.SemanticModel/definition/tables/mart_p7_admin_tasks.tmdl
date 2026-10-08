@@ -1,0 +1,37 @@
+table mart_p7_admin_tasks
+	lineageTag: d410665d-a84c-447d-8c97-72fa26790df7
+
+	measure 'Task Count' = SUM(mart_p7_admin_tasks[task_count])
+		formatString: #,0
+		lineageTag: ba2d201a-0f37-4187-8d73-e4d2700de741
+
+	column task_type
+		dataType: string
+		lineageTag: 52df2f23-b4bc-4119-8df5-3db04dcd128a
+		sourceColumn: task_type
+
+	column task_status
+		dataType: string
+		lineageTag: c82ca54b-cf2f-40e0-aea8-d5f9c5c913fc
+		sourceColumn: task_status
+
+	column due_bucket
+		dataType: string
+		lineageTag: 9c257777-c004-428c-8a4d-e9985f148f56
+		sourceColumn: due_bucket
+
+	column task_count
+		dataType: int64
+		lineageTag: 7d7b1199-6219-41fa-9a3c-ee43a999acc8
+		sourceColumn: task_count
+
+	partition mart_p7_admin_tasks = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_admin_tasks.csv"), [Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"task_type", type text}, {"task_status", type text}, {"due_bucket", type text}, {"task_count", Int64.Type}}, "en-GB")
+				in
+				  Typed
+

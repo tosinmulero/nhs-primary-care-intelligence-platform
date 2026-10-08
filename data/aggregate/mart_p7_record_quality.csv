@@ -1,0 +1,10 @@
+record_type,sub_type,status,record_count
+condition_record,DEMO_SNOMED,rejected,200
+condition_record,DEMO_SNOMED,proposed,897
+condition_record,DEMO_SNOMED,approved,2503
+patient_summary,new_registration,pending_clinician,344
+patient_summary,new_registration,approved,698
+patient_summary,new_registration,draft,398
+patient_summary,new_registration,rejected,60
+legacy_mapping,read_to_snomed_demo,proposed,6
+legacy_mapping,read_to_snomed_demo,demo_reviewed,2

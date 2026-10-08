@@ -1,0 +1,65 @@
+table mart_p7_data_quality
+	lineageTag: fe5ea3de-dcc0-476c-b7bd-333d35cce413
+
+	measure 'Quality Flags' = SUM(mart_p7_data_quality[issue_count])
+		formatString: #,0
+		lineageTag: c2958974-4256-4e7b-a605-8ec4532c0c2c
+
+	column detected_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d709222d-5399-44e3-a6c0-8950a23b4c06
+		summarizeBy: none
+		sourceColumn: detected_date
+
+		variation Variation
+			isDefault
+			relationship: a1dd9885-74b2-4981-9318-0b136b4506b8
+			defaultHierarchy: LocalDateTable_6d165ae0-f0d9-476d-b362-c5af70e56f13.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule_code
+		dataType: string
+		lineageTag: 7db2a54e-bf16-4db4-acd2-538333aa4370
+		summarizeBy: none
+		sourceColumn: rule_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: 7cb3d4c1-6066-472d-9135-e011f1151c8e
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column issue_status
+		dataType: string
+		lineageTag: 7d82ea57-30a3-4d4f-8fa5-b6f342fc70ea
+		summarizeBy: none
+		sourceColumn: issue_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column issue_count
+		dataType: int64
+		lineageTag: 4dcf43f5-0bc1-4f57-8ce2-47a12b776dba
+		summarizeBy: sum
+		sourceColumn: issue_count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_p7_data_quality = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_data_quality.csv"), [Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"detected_date", type date}, {"rule_code", type text}, {"severity", type text}, {"issue_status", type text}, {"issue_count", Int64.Type}}, "en-GB")
+				in
+				  Typed
+

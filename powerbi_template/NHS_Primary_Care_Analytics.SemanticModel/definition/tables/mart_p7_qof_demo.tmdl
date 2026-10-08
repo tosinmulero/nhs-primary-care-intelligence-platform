@@ -1,0 +1,81 @@
+table mart_p7_qof_demo
+	lineageTag: 950aee42-78c3-4270-9be4-88481cfc6eb9
+
+	measure 'Mean Demo Percentage' = AVERAGE(mart_p7_qof_demo[demo_percent])
+		formatString: 0.0"%"
+		lineageTag: 88cb868d-92e5-4a81-98ef-64905acfd00c
+
+	column measurement_month
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 39667199-a865-4426-a64a-33552419c336
+		summarizeBy: none
+		sourceColumn: measurement_month
+
+		variation Variation
+			isDefault
+			relationship: c7c4ad11-6a14-43fa-ae45-0487a596f86e
+			defaultHierarchy: LocalDateTable_4dec7bd5-0d43-4213-8740-8579fa285451.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicator_id
+		dataType: string
+		lineageTag: a5b00f68-c289-45ae-bb0a-aabaa830980a
+		summarizeBy: none
+		sourceColumn: indicator_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicator_name
+		dataType: string
+		lineageTag: 0012503e-e92c-46f6-b388-df162b42039d
+		summarizeBy: none
+		sourceColumn: indicator_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column denominator_count
+		dataType: int64
+		lineageTag: 02c21236-6aa0-4ef2-b909-6269b071d645
+		summarizeBy: sum
+		sourceColumn: denominator_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column numerator_count
+		dataType: int64
+		lineageTag: 17295e85-93e9-46f6-8a7f-209ae9500bd6
+		summarizeBy: sum
+		sourceColumn: numerator_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column demo_percent
+		dataType: double
+		lineageTag: 65b9139b-3727-4ecd-a2d2-ee2f7fc73b3b
+		summarizeBy: sum
+		sourceColumn: demo_percent
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicator_classification
+		dataType: string
+		lineageTag: ce9e501b-c5a2-49c9-98a0-5b892be085e6
+		summarizeBy: none
+		sourceColumn: indicator_classification
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_p7_qof_demo = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_qof_demo.csv"), [Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"measurement_month", type date}, {"indicator_id", type text}, {"indicator_name", type text}, {"denominator_count", Int64.Type}, {"numerator_count", Int64.Type}, {"demo_percent", type number}, {"indicator_classification", type text}}, "en-GB")
+				in
+				  Typed
+

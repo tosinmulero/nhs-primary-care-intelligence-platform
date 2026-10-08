@@ -1,0 +1,189 @@
+table mart_p7_executive
+	lineageTag: 83865856-6191-4fe3-a274-73c6eaa2f4d1
+
+	measure 'Registered Patients' = MAX(mart_p7_executive[registered_patients])
+		formatString: #,0
+		lineageTag: 2c514819-515b-4c95-b5db-7e8d572c566a
+
+	measure 'Total Appointments' = MAX(mart_p7_executive[appointments_total])
+		formatString: #,0
+		lineageTag: a613ed3a-0079-4a7e-9e30-e98919d5e631
+
+	measure 'Outstanding Tasks' = MAX(mart_p7_executive[tasks_outstanding])
+		formatString: #,0
+		lineageTag: 88714760-e54f-49e1-a4b1-38709171a3bc
+
+	measure 'Awaiting Clinician' = MAX(mart_p7_executive[awaiting_clinician])
+		formatString: #,0
+		lineageTag: b819ea93-732d-4f2d-acd8-e01e2640206c
+
+	measure 'Backlogged Letters' = MAX(mart_p7_executive[correspondence_backlog])
+		formatString: #,0
+		lineageTag: 50c80568-47ae-4ddc-8804-d1c04bdf8135
+
+	measure 'Pending Pathology' = MAX(mart_p7_executive[pathology_pending_review])
+		formatString: #,0
+		lineageTag: 93ef66de-4a1b-4929-acc7-404592406ab1
+
+	measure 'Open Quality Issues' = MAX(mart_p7_executive[open_data_quality_issues])
+		formatString: #,0
+		lineageTag: f94ba7af-62d6-40ce-a2ed-b6557b966661
+
+	measure 'Acceptance Rate' = MAX(mart_p7_executive[intake_acceptance_pct])
+		formatString: 0.0"%"
+		lineageTag: 5293f05a-ea80-46ef-858a-9a1be7f1b94a
+
+	column reporting_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: da307e2b-8cf5-4888-9e8e-83e6f5238d60
+		summarizeBy: none
+		sourceColumn: reporting_date
+
+		variation Variation
+			isDefault
+			relationship: ccabc69b-cadd-45e1-bf78-8612ae421fa4
+			defaultHierarchy: LocalDateTable_598802f0-389e-4e34-bdd8-ef566135c508.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column registered_patients
+		dataType: int64
+		lineageTag: 3f976730-3fcb-4ceb-a5f1-a1a8c234e053
+		summarizeBy: sum
+		sourceColumn: registered_patients
+
+		annotation SummarizationSetBy = Automatic
+
+	column appointments_total
+		dataType: int64
+		lineageTag: 50c629f6-8ce6-4b3f-9c1b-dc6e2bab61f6
+		summarizeBy: sum
+		sourceColumn: appointments_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column correspondence_backlog
+		dataType: int64
+		lineageTag: 24b7b6f9-baab-45ed-a255-b98986310f8d
+		summarizeBy: sum
+		sourceColumn: correspondence_backlog
+
+		annotation SummarizationSetBy = Automatic
+
+	column pathology_pending_review
+		dataType: int64
+		lineageTag: 70557dd4-e33b-410c-8ae0-67f66b450dbe
+		summarizeBy: sum
+		sourceColumn: pathology_pending_review
+
+		annotation SummarizationSetBy = Automatic
+
+	column tasks_outstanding
+		dataType: int64
+		lineageTag: 18ba12f5-ae45-4449-8c1a-c2ecfcb35d21
+		summarizeBy: sum
+		sourceColumn: tasks_outstanding
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_data_quality_issues
+		dataType: int64
+		lineageTag: ad4ab8f8-1b02-4f53-900d-f3eec04892bb
+		summarizeBy: sum
+		sourceColumn: open_data_quality_issues
+
+		annotation SummarizationSetBy = Automatic
+
+	column intake_rows
+		dataType: int64
+		lineageTag: 725c2935-fc10-480a-81bb-e586c1f32a17
+		summarizeBy: sum
+		sourceColumn: intake_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column accepted_rows
+		dataType: int64
+		lineageTag: 14d2a53e-7419-430d-83a5-ab35128eae04
+		summarizeBy: sum
+		sourceColumn: accepted_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column rejected_rows
+		dataType: int64
+		lineageTag: 5cdc4db6-e682-4bf6-b05a-e3629d29082a
+		summarizeBy: sum
+		sourceColumn: rejected_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column intake_acceptance_pct
+		dataType: double
+		lineageTag: 722ef82d-6163-462e-944a-c88a535194cf
+		summarizeBy: sum
+		sourceColumn: intake_acceptance_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_demo_cases
+		dataType: int64
+		lineageTag: f12bd873-4177-40a2-8415-a59db7d2fccd
+		summarizeBy: sum
+		sourceColumn: total_demo_cases
+
+		annotation SummarizationSetBy = Automatic
+
+	column awaiting_admin
+		dataType: int64
+		lineageTag: bd55eb34-4c08-4a0f-96b9-69aab4caa2a2
+		summarizeBy: sum
+		sourceColumn: awaiting_admin
+
+		annotation SummarizationSetBy = Automatic
+
+	column awaiting_clinician
+		dataType: int64
+		lineageTag: 008921e4-7056-4967-b750-1815bc95cff2
+		summarizeBy: sum
+		sourceColumn: awaiting_clinician
+
+		annotation SummarizationSetBy = Automatic
+
+	column demo_approved
+		dataType: int64
+		lineageTag: 6c297fbc-6b31-49da-b5e0-76c2e394080c
+		summarizeBy: sum
+		sourceColumn: demo_approved
+
+		annotation SummarizationSetBy = Automatic
+
+	column demo_rejected
+		dataType: int64
+		lineageTag: 1aa9af6b-5cbb-4422-b30b-083b23ccc4ab
+		summarizeBy: sum
+		sourceColumn: demo_rejected
+
+		annotation SummarizationSetBy = Automatic
+
+	column pct_awaiting_review
+		dataType: double
+		lineageTag: dc807bbb-7339-484d-9f67-2f8a2739bd50
+		summarizeBy: sum
+		sourceColumn: pct_awaiting_review
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_p7_executive = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_executive.csv"), [Delimiter=",", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"reporting_date", type date}, {"registered_patients", Int64.Type}, {"appointments_total", Int64.Type}, {"correspondence_backlog", Int64.Type}, {"pathology_pending_review", Int64.Type}, {"tasks_outstanding", Int64.Type}, {"open_data_quality_issues", Int64.Type}, {"intake_rows", Int64.Type}, {"accepted_rows", Int64.Type}, {"rejected_rows", Int64.Type}, {"intake_acceptance_pct", type number}, {"total_demo_cases", Int64.Type}, {"awaiting_admin", Int64.Type}, {"awaiting_clinician", Int64.Type}, {"demo_approved", Int64.Type}, {"demo_rejected", Int64.Type}, {"pct_awaiting_review", type number}}, "en-GB")
+				in
+				  Typed
+

@@ -1,0 +1,9 @@
+code_system,concept_label,simulated_patient_count,suppressed_small_cell
+DEMO_SNOMED,Blood pressure monitoring (invented modern label),297,False
+DEMO_SNOMED,Asthma care (invented modern label),346,False
+DEMO_SNOMED,Diabetes review (invented modern label),298,False
+DEMO_SNOMED,Medication review (invented modern label),327,False
+DEMO_SNOMED,Vaccination history (invented modern label),289,False
+DEMO_SNOMED,Smoking status (invented modern label),298,False
+DEMO_SNOMED,Allergy review (invented modern label),273,False
+DEMO_SNOMED,Referral follow-up (invented modern label),321,False

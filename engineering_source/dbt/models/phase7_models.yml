@@ -1,0 +1,147 @@
+version: 2
+
+models:
+  - name: mart_p7_executive
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: reporting_date
+        data_tests:
+          - not_null
+      - name: registered_patients
+        data_tests:
+          - not_null
+      - name: total_demo_cases
+        data_tests:
+          - not_null
+  - name: mart_p7_demographics
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: area_group
+        data_tests:
+          - not_null
+      - name: age_band
+        data_tests:
+          - not_null
+      - name: patient_count
+        data_tests:
+          - not_null
+  - name: mart_p7_registrations
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: registration_month
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - not_null
+      - name: registrations
+        data_tests:
+          - not_null
+  - name: mart_p7_appointments
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: appointment_month
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - not_null
+      - name: appointment_count
+        data_tests:
+          - not_null
+  - name: mart_p7_record_quality
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: record_type
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - not_null
+      - name: record_count
+        data_tests:
+          - not_null
+  - name: mart_p7_inbox_aging
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: workstream
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - not_null
+      - name: record_count
+        data_tests:
+          - not_null
+  - name: mart_p7_admin_tasks
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: task_type
+        data_tests:
+          - not_null
+      - name: task_status
+        data_tests:
+          - not_null
+      - name: task_count
+        data_tests:
+          - not_null
+  - name: mart_p7_workflow_queues
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: source_kind
+        data_tests:
+          - not_null
+      - name: case_status
+        data_tests:
+          - not_null
+      - name: case_count
+        data_tests:
+          - not_null
+  - name: mart_p7_qof_demo
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: measurement_month
+        data_tests:
+          - not_null
+      - name: indicator_name
+        data_tests:
+          - not_null
+      - name: demo_percent
+        data_tests:
+          - not_null
+  - name: mart_p7_data_quality
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: detected_date
+        data_tests:
+          - not_null
+      - name: severity
+        data_tests:
+          - not_null
+      - name: issue_count
+        data_tests:
+          - not_null
+  - name: mart_p7_audit_activity
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: event_day
+        data_tests:
+          - not_null
+      - name: actor_type
+        data_tests:
+          - not_null
+      - name: event_count
+        data_tests:
+          - not_null
+  - name: mart_p7_demo_cohorts
+    description: 'SIMULATION ONLY. Non-identifiable reporting output for Power BI.'
+    columns:
+      - name: code_system
+        data_tests:
+          - not_null
+      - name: concept_label
+        data_tests:
+          - not_null
+      - name: simulated_patient_count
+        data_tests:
+          - not_null

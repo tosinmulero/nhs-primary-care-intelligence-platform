@@ -1,0 +1,42 @@
+table mart_p7_inbox_aging
+	lineageTag: b023fc2e-116d-47c3-b0db-f58084261939
+
+	measure 'Inbox Records' = SUM(mart_p7_inbox_aging[record_count])
+		formatString: #,0
+		lineageTag: 406d06cc-e856-4b13-8b3c-522068ebb700
+
+	column workstream
+		dataType: string
+		lineageTag: 1b772133-c15c-4a75-9038-3531cb792572
+		sourceColumn: workstream
+
+	column record_category
+		dataType: string
+		lineageTag: 95b216cf-eb7e-4f8d-9650-f43a3bcf7afe
+		sourceColumn: record_category
+
+	column status
+		dataType: string
+		lineageTag: 0ea7b5b4-be2b-464e-85db-7fb719db1268
+		sourceColumn: status
+
+	column age_band
+		dataType: string
+		lineageTag: 30c13692-d4be-44c2-b5c6-d5a8fd0b7ae9
+		sourceColumn: age_band
+
+	column record_count
+		dataType: int64
+		lineageTag: 2d254d22-938c-46aa-83c5-b01de424ba20
+		sourceColumn: record_count
+
+	partition mart_p7_inbox_aging = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_inbox_aging.csv"), [Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"workstream", type text}, {"record_category", type text}, {"status", type text}, {"age_band", type text}, {"record_count", Int64.Type}}, "en-GB")
+				in
+				  Typed
+

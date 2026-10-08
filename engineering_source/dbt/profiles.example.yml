@@ -1,0 +1,13 @@
+nhs_primarycare:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: nhs_demo_app
+      pass: REPLACE_LOCALLY
+      dbname: nhs_primarycare_demo
+      schema: analytics
+      threads: 2
+# Copy only to your local ~/.dbt/profiles.yml and set credentials there. Do not commit secrets.

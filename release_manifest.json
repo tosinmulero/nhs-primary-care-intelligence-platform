@@ -1,0 +1,31 @@
+{
+  "status": "RELEASE_CANDIDATE_NOT_PUBLISHED",
+  "created_utc": "2026-10-08T21:25:10.002194+00:00",
+  "source_phase9_report": "phase9_qa_report_20261008T210713Z.json",
+  "aggregate_marts": 12,
+  "aggregate_rows": 2431,
+  "template_model_file_references_replaced": 12,
+  "screenshots": [
+    "page-01-executive.png",
+    "page-02-demographics.png",
+    "page-03-coding-quality.png",
+    "page-04-pathology.png",
+    "page-05-clinical-qof.png",
+    "page-06-governance.png"
+  ],
+  "missing_screenshots": [],
+  "aggregate_sha256": {
+    "mart_p7_executive": "bbbbced6c7409d52dce13f22a9454129c3bd06ad841781997aeb36b81ee3e7d1",
+    "mart_p7_demographics": "d756487b42ca5fb41578a11be694684046e986e13d40e475585a1b628ddc723a",
+    "mart_p7_registrations": "f258b543f830ef37027009f978cfefa174d3bb6db830cff5f5d1ee1b07a9f401",
+    "mart_p7_appointments": "e78791dcef07d855dc34defcc905fcf5dad1133dc7c262a71b1389eb47acd9f5",
+    "mart_p7_record_quality": "f82d3ef5ed9d49d5678b702ef20dd268d4744332c7f93d07ee261f87d9e4e8be",
+    "mart_p7_inbox_aging": "25aae57a7b4b828b2294a630bf6dbec9fed2b5699d1edb66b5fa147b028d34e8",
+    "mart_p7_admin_tasks": "c2ff19069859996a04b19714ea77f3e934c9cb6a5db96b5ec84756674d98f688",
+    "mart_p7_workflow_queues": "03c87c953218be9c2afeaeb096c5965f89121e7e9d22123a7877c0f8f017e77b",
+    "mart_p7_qof_demo": "38901c9a50724465875b6f07d1de7e37b4e72cdd4ea1a6de60fb3f8d3e575f11",
+    "mart_p7_data_quality": "052ca0c93696b3a1d757cc5f5f0da52c7052cef1ba004c02aeb0161857a4a9ec",
+    "mart_p7_audit_activity": "82708dde2b1c8438879d91ef74bd97379bacec0e305a635f04faba99f8a84ccc",
+    "mart_p7_demo_cohorts": "9037e5c2b9fda62e6c1fa9cbf5c12683c2d77680a7ca6df803e9c7b5e7e8bdac"
+  }
+}

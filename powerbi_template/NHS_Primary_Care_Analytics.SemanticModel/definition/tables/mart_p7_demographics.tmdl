@@ -1,0 +1,42 @@
+table mart_p7_demographics
+	lineageTag: 9ec32df5-7c36-42f1-b8e7-81c0dc4f3d87
+
+	measure 'Population by Segment' = SUM(mart_p7_demographics[patient_count])
+		formatString: #,0
+		lineageTag: 639898ea-cc41-4f8c-8719-ca7a97693f4f
+
+	column area_group
+		dataType: string
+		lineageTag: e7e7e8ae-90ae-46f3-b4d9-17a4f7f68b09
+		sourceColumn: area_group
+
+	column sex_at_registration
+		dataType: string
+		lineageTag: cc38f686-541e-4b7e-9441-dc92181ef997
+		sourceColumn: sex_at_registration
+
+	column age_band
+		dataType: string
+		lineageTag: fbda0644-1e19-47ef-b525-d9689d940250
+		sourceColumn: age_band
+
+	column patient_count
+		dataType: int64
+		lineageTag: 65e6d24f-916d-4194-9865-9faf6dfc33b6
+		sourceColumn: patient_count
+
+	column pct_population
+		dataType: double
+		lineageTag: aecc9478-22c1-4766-93a0-4139445657bc
+		sourceColumn: pct_population
+
+	partition mart_p7_demographics = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_demographics.csv"), [Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"area_group", type text}, {"sex_at_registration", type text}, {"age_band", type text}, {"patient_count", Int64.Type}, {"pct_population", type number}}, "en-GB")
+				in
+				  Typed
+

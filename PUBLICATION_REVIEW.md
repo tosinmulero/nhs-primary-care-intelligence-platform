@@ -1,0 +1,133 @@
+# GitHub publication review
+
+- Phase 10B template: tested locally by project owner
+- Six genuine screenshots copied from Power BI Desktop
+- 12 aggregate marts verified by SHA-256 manifest
+- Screened engineering files copied: **57**
+- Source files omitted as nonportable/sensitive: **121**
+- No GitHub publication has occurred yet
+- Public visibility and repository licence must be chosen by repository owner
+
+## Omitted engineering source files
+
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_admin_tasks.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_appointments.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_audit_activity.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_data_quality.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_demo_cohorts.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_demographics.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_executive.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_inbox_aging.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_qof_demo.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_record_quality.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_registrations.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_marts/mart_p7_workflow_queues.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_admin_tasks_task_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_admin_tasks_task_status.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_admin_tasks_task_type.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_appointments_appointment_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_appointments_appointment_month.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_appointments_status.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_audit_activity_actor_type.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_audit_activity_event_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_audit_activity_event_day.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_data_quality_detected_date.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_data_quality_issue_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_data_quality_severity.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demo_cohorts_code_system.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demo_cohorts_concept_label.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demo_cohorts_simulated_patient_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demographics_age_band.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demographics_area_group.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demographics_patient_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_executive_registered_patients.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_executive_reporting_date.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_executive_total_demo_cases.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_inbox_aging_record_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_inbox_aging_status.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_inbox_aging_workstream.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_qof_demo_demo_percent.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_qof_demo_indicator_name.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_qof_demo_measurement_month.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_record_quality_record_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_record_quality_record_type.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_record_quality_status.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_registrations_registration_month.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_registrations_registrations.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_registrations_status.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_workflow_queues_case_count.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_workflow_queues_case_status.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_workflow_queues_source_kind.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_staging/stg_p7_correspondence.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_staging/stg_p7_demographics.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_staging/stg_p7_executive.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/models/phase7_staging/stg_p7_pathology.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_clinical_record_totals.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_demographic_total.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_executive_totals.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_no_small_cohorts.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_operational_totals.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_other_totals.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_qof_demo_valid.sql` — generated/local/oversized file
+- `dbt/target/compiled/nhs_primarycare/tests/assert_p7_queue_totals.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_admin_tasks.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_appointments.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_audit_activity.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_data_quality.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_demo_cohorts.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_demographics.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_executive.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_inbox_aging.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_qof_demo.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_record_quality.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_registrations.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_marts/mart_p7_workflow_queues.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_admin_tasks_task_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_admin_tasks_task_status.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_admin_tasks_task_type.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_appointments_appointment_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_appointments_appointment_month.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_appointments_status.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_audit_activity_actor_type.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_audit_activity_event_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_audit_activity_event_day.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_data_quality_detected_date.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_data_quality_issue_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_data_quality_severity.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demo_cohorts_code_system.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demo_cohorts_concept_label.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demo_cohorts_simulated_patient_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demographics_age_band.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demographics_area_group.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_demographics_patient_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_executive_registered_patients.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_executive_reporting_date.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_executive_total_demo_cases.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_inbox_aging_record_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_inbox_aging_status.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_inbox_aging_workstream.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_qof_demo_demo_percent.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_qof_demo_indicator_name.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_qof_demo_measurement_month.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_record_quality_record_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_record_quality_record_type.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_record_quality_status.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_registrations_registration_month.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_registrations_registrations.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_registrations_status.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_workflow_queues_case_count.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_workflow_queues_case_status.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_models.yml/not_null_mart_p7_workflow_queues_source_kind.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_staging/stg_p7_correspondence.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_staging/stg_p7_demographics.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_staging/stg_p7_executive.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/models/phase7_staging/stg_p7_pathology.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_clinical_record_totals.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_demographic_total.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_executive_totals.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_no_small_cohorts.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_operational_totals.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_other_totals.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_qof_demo_valid.sql` — generated/local/oversized file
+- `dbt/target/run/nhs_primarycare/tests/assert_p7_queue_totals.sql` — generated/local/oversized file
+- `scripts/phase10_publication_readiness.py` — absolute personal workstation path

@@ -1,0 +1,40 @@
+task_type,task_status,due_bucket,task_count
+other,in_progress,Not overdue (demo),4
+quality_review,on_hold,Not overdue (demo),1
+other,open,Overdue (demo),291
+other,on_hold,Not overdue (demo),1
+record_summary,in_progress,Not overdue (demo),4
+other,on_hold,Overdue (demo),104
+letter_coding,cancelled,Closed,51
+other,cancelled,Closed,78
+pathology_routing,on_hold,Overdue (demo),91
+quality_review,completed,Closed,589
+pathology_routing,open,Overdue (demo),270
+letter_coding,in_progress,Overdue (demo),266
+letter_coding,open,Overdue (demo),292
+pathology_routing,completed,Closed,636
+pathology_routing,in_progress,Not overdue (demo),5
+quality_review,cancelled,Closed,77
+record_summary,on_hold,Not overdue (demo),2
+letter_coding,completed,Closed,593
+record_summary,on_hold,Overdue (demo),86
+pathology_routing,open,Not overdue (demo),4
+other,completed,Closed,597
+record_summary,in_progress,Overdue (demo),254
+pathology_routing,in_progress,Overdue (demo),254
+pathology_routing,cancelled,Closed,62
+record_summary,open,Overdue (demo),308
+letter_coding,in_progress,Not overdue (demo),3
+quality_review,in_progress,Overdue (demo),239
+quality_review,open,Overdue (demo),270
+pathology_routing,on_hold,Not overdue (demo),1
+letter_coding,open,Not overdue (demo),7
+quality_review,on_hold,Overdue (demo),84
+quality_review,open,Not overdue (demo),6
+quality_review,in_progress,Not overdue (demo),6
+record_summary,open,Not overdue (demo),6
+letter_coding,on_hold,Overdue (demo),101
+record_summary,completed,Closed,616
+other,in_progress,Overdue (demo),272
+other,open,Not overdue (demo),8
+record_summary,cancelled,Closed,61

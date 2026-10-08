@@ -1,0 +1,37 @@
+table mart_p7_record_quality
+	lineageTag: 9336019d-4601-4f31-8850-76c1a7eb1c70
+
+	measure 'Record Count' = SUM(mart_p7_record_quality[record_count])
+		formatString: #,0
+		lineageTag: 7b62a74a-772c-4a68-862c-cc8e7079da2d
+
+	column record_type
+		dataType: string
+		lineageTag: e2fc662f-230d-44ef-b498-4d70abdef7cd
+		sourceColumn: record_type
+
+	column sub_type
+		dataType: string
+		lineageTag: 016bfaea-349c-41cc-aaa2-a6ff940d4220
+		sourceColumn: sub_type
+
+	column status
+		dataType: string
+		lineageTag: 8d33d507-cddc-4006-9a9d-87ace4c59445
+		sourceColumn: status
+
+	column record_count
+		dataType: int64
+		lineageTag: 6e887e10-8f9e-45b5-94b9-c21508c37fcb
+		sourceColumn: record_count
+
+	partition mart_p7_record_quality = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_record_quality.csv"), [Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"record_type", type text}, {"sub_type", type text}, {"status", type text}, {"record_count", Int64.Type}}, "en-GB")
+				in
+				  Typed
+

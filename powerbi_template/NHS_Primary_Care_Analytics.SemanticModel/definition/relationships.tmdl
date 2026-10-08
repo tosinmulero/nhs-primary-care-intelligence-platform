@@ -1,0 +1,30 @@
+relationship ccabc69b-cadd-45e1-bf78-8612ae421fa4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: mart_p7_executive.reporting_date
+	toColumn: LocalDateTable_598802f0-389e-4e34-bdd8-ef566135c508.Date
+
+relationship 42abb16a-8e65-42c3-9755-530156d6879e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: mart_p7_registrations.registration_month
+	toColumn: LocalDateTable_21f192aa-95f4-4ce7-9538-c952565f4558.Date
+
+relationship 06bfefcd-5711-4e46-bc5f-6ccf5a171a60
+	joinOnDateBehavior: datePartOnly
+	fromColumn: mart_p7_appointments.appointment_month
+	toColumn: LocalDateTable_acabaad8-d5ab-4e40-b1e1-ec97e13115d2.Date
+
+relationship c7c4ad11-6a14-43fa-ae45-0487a596f86e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: mart_p7_qof_demo.measurement_month
+	toColumn: LocalDateTable_4dec7bd5-0d43-4213-8740-8579fa285451.Date
+
+relationship a1dd9885-74b2-4981-9318-0b136b4506b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: mart_p7_data_quality.detected_date
+	toColumn: LocalDateTable_6d165ae0-f0d9-476d-b362-c5af70e56f13.Date
+
+relationship fdb8e8ce-5f49-4af7-8ea6-d48845fded91
+	joinOnDateBehavior: datePartOnly
+	fromColumn: mart_p7_audit_activity.event_day
+	toColumn: LocalDateTable_543f85a3-6dc3-4d61-aa1a-e35925e7cb63.Date
+

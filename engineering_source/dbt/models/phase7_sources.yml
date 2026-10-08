@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: phase6
+    description: 'Phase 6 aggregate-only SQL views, all synthetic data, no patient identifiers.'
+    schema: analytics
+    tables:
+      - name: v_phase6_executive
+      - name: v_phase6_population_demographics
+      - name: v_phase6_registration_monthly
+      - name: v_phase6_appointments_monthly
+      - name: v_phase6_coding_status
+      - name: v_phase6_patient_summary_status
+      - name: v_phase6_terminology_mapping_status
+      - name: v_phase6_correspondence_queue
+      - name: v_phase6_pathology_queue
+      - name: v_phase6_task_performance
+      - name: v_phase6_demo_cohorts
+      - name: v_phase6_qof_demo_trends
+      - name: v_phase6_quality_issue_trends
+      - name: v_phase6_workflow_queue
+      - name: v_phase6_audit_daily

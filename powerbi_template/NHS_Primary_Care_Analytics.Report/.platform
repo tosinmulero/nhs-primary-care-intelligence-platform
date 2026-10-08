@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "NHS_Primary_Care_Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6e82df83-953b-471d-8a5b-baba00cb8e33"
+  }
+}

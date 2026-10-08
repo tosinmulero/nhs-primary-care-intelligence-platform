@@ -1,0 +1,8 @@
+name: nhs_primarycare
+version: '1.0.0'
+config-version: 2
+profile: nhs_primarycare
+model-paths: ['models']
+models:
+  nhs_primarycare:
+    +materialized: view

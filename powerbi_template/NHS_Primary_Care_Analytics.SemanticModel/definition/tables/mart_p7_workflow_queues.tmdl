@@ -1,0 +1,32 @@
+table mart_p7_workflow_queues
+	lineageTag: 53112b1a-7839-4918-847f-9f3fd446bd2a
+
+	measure 'Workflow Cases' = SUM(mart_p7_workflow_queues[case_count])
+		formatString: #,0
+		lineageTag: 4b863f85-faa5-478d-853b-bef7d18fd7da
+
+	column source_kind
+		dataType: string
+		lineageTag: 8ed97e2e-0fc0-4cd1-a66c-969394eba6b9
+		sourceColumn: source_kind
+
+	column case_status
+		dataType: string
+		lineageTag: 4828a7ce-df42-4cea-a910-a2a9bb4e48b2
+		sourceColumn: case_status
+
+	column case_count
+		dataType: int64
+		lineageTag: 91dc6562-8cf8-4a4e-8c3f-cc51a8abf086
+		sourceColumn: case_count
+
+	partition mart_p7_workflow_queues = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_workflow_queues.csv"), [Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"source_kind", type text}, {"case_status", type text}, {"case_count", Int64.Type}}, "en-GB")
+				in
+				  Typed
+

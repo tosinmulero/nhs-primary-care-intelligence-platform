@@ -1,0 +1,49 @@
+table mart_p7_registrations
+	lineageTag: b2b99c81-ca00-4aa1-bc7b-25c09d2b33e8
+
+	measure 'Total Registrations' = SUM(mart_p7_registrations[registrations])
+		formatString: #,0
+		lineageTag: 084d8cd5-1be0-4dd6-9d10-4e1338387130
+
+	column registration_month
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 37930ace-7a61-4f39-bb3b-312aa5f9bcd4
+		summarizeBy: none
+		sourceColumn: registration_month
+
+		variation Variation
+			isDefault
+			relationship: 42abb16a-8e65-42c3-9755-530156d6879e
+			defaultHierarchy: LocalDateTable_21f192aa-95f4-4ce7-9538-c952565f4558.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 4ecf5ae6-2893-4bf8-88c5-5c5f0b46e9ee
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column registrations
+		dataType: int64
+		lineageTag: 67a669b9-0354-41dd-abd7-8b48d9e8d3b8
+		summarizeBy: sum
+		sourceColumn: registrations
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_p7_registrations = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_registrations.csv"), [Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"registration_month", type date}, {"status", type text}, {"registrations", Int64.Type}}, "en-GB")
+				in
+				  Typed
+

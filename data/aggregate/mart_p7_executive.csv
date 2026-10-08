@@ -1,0 +1,2 @@
+reporting_date,registered_patients,appointments_total,correspondence_backlog,pathology_pending_review,tasks_outstanding,open_data_quality_issues,intake_rows,accepted_rows,rejected_rows,intake_acceptance_pct,total_demo_cases,awaiting_admin,awaiting_clinician,demo_approved,demo_rejected,pct_awaiting_review
+2026-10-01,8000,20000,1447,1657,3240,300,8190,8000,190,97.68,4749,1525,3224,0,0,100.00

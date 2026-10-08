@@ -1,0 +1,30 @@
+# Local, machine-specific Power BI output
+.local_demo/
+.local_demo_building/
+**/.pbi/
+**/*.abf
+# Environment and credentials
+.env
+.env.*
+!.env.example
+**/profiles.yml
+**/profiles.yaml
+*.pem
+*.key
+*.pfx
+*.p12
+# Runtime and development
+.venv/
+__pycache__/
+.pytest_cache/
+node_modules/
+.DS_Store
+# Never include patient-shaped development data
+data/raw/
+data/staging/
+data/synthetic/
+data/processed/
+# Generated reports and builds
+logs/
+target/
+dist/

@@ -1,0 +1,57 @@
+table mart_p7_audit_activity
+	lineageTag: e4a5a873-5e1e-47e8-b20f-f97dcaae926e
+
+	measure 'Audit Events' = SUM(mart_p7_audit_activity[event_count])
+		formatString: #,0
+		lineageTag: 549f1277-3e84-494a-bf69-d96239c636f2
+
+	column event_day
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9fa64d8f-e3df-485a-9340-031e43074f4a
+		summarizeBy: none
+		sourceColumn: event_day
+
+		variation Variation
+			isDefault
+			relationship: fdb8e8ce-5f49-4af7-8ea6-d48845fded91
+			defaultHierarchy: LocalDateTable_543f85a3-6dc3-4d61-aa1a-e35925e7cb63.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column actor_type
+		dataType: string
+		lineageTag: 5636edae-d9f9-40c7-851f-e1ca25127254
+		summarizeBy: none
+		sourceColumn: actor_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column action
+		dataType: string
+		lineageTag: 84000c17-f2f5-4009-b670-fe8a0be609bc
+		summarizeBy: none
+		sourceColumn: action
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_count
+		dataType: int64
+		lineageTag: 51285b7f-9b63-4f01-815c-0d150bc047a4
+		summarizeBy: sum
+		sourceColumn: event_count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mart_p7_audit_activity = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_audit_activity.csv"), [Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"event_day", type date}, {"actor_type", type text}, {"action", type text}, {"event_count", Int64.Type}}, "en-GB")
+				in
+				  Typed
+

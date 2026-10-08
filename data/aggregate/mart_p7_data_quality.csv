@@ -1,0 +1,5 @@
+detected_date,rule_code,severity,issue_status,issue_count
+2026-10-01,DUPLICATE_INTAKE_ID,high,open,75
+2026-10-01,MISSING_AREA_INTAKE,medium,open,75
+2026-10-01,DEMO_TERMINOLOGY_REVIEW,low,open,110
+2026-10-01,MALFORMED_INTAKE_ID,high,open,40

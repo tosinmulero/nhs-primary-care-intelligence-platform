@@ -1,0 +1,37 @@
+table mart_p7_demo_cohorts
+	lineageTag: 71695782-1c61-4839-bc13-7ae8518e243d
+
+	measure 'Cohort Records' = SUM(mart_p7_demo_cohorts[simulated_patient_count])
+		formatString: #,0
+		lineageTag: 827f3d02-f4bd-4e1c-914c-86cf32a3f252
+
+	column code_system
+		dataType: string
+		lineageTag: 3b9573c4-61a3-4998-a03c-fd3707db3d2a
+		sourceColumn: code_system
+
+	column concept_label
+		dataType: string
+		lineageTag: 83cdec14-4325-42c4-84a7-0fd07cc6dbf2
+		sourceColumn: concept_label
+
+	column simulated_patient_count
+		dataType: int64
+		lineageTag: 1686c709-8413-4971-bfab-9db9c9f7ed93
+		sourceColumn: simulated_patient_count
+
+	column suppressed_small_cell
+		dataType: boolean
+		lineageTag: 0d137fad-ccc7-4128-bd2e-d0cb373db27c
+		sourceColumn: suppressed_small_cell
+
+	partition mart_p7_demo_cohorts = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("__NHS_DEMO_AGGREGATE_ROOT__\mart_p7_demo_cohorts.csv"), [Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Typed = Table.TransformColumnTypes(Promoted, {{"code_system", type text}, {"concept_label", type text}, {"simulated_patient_count", Int64.Type}, {"suppressed_small_cell", type logical}}, "en-GB")
+				in
+				  Typed
+

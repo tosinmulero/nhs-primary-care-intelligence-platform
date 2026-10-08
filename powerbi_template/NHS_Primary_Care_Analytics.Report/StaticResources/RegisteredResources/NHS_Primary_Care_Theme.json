@@ -1,0 +1,31 @@
+{
+  "name": "NHS_Primary_Care_Theme.json",
+  "dataColors": [
+    "#168BDF",
+    "#11AF9E",
+    "#8254D8",
+    "#F2AD3A",
+    "#F16B7A",
+    "#4574C7",
+    "#31C6B9",
+    "#657FA1"
+  ],
+  "background": "#F3F7FD",
+  "foreground": "#142E53",
+  "tableAccent": "#168BDF",
+  "good": "#11AF9E",
+  "neutral": "#F2AD3A",
+  "bad": "#F16B7A",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 15,
+      "color": "#112744"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#53657D"
+    }
+  }
+}
