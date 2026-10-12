@@ -1,0 +1,61 @@
+name: NHS Primary Care Portfolio Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-contracts-and-portable-report:
+    name: Test synthetic data contracts and Power BI artifact inventory
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate portable Power BI deliverables
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import csv
+          root = Path(".")
+          expected = [
+              "page-01-executive.png",
+              "page-02-demographics.png",
+              "page-03-coding-quality.png",
+              "page-04-pathology.png",
+              "page-05-clinical-qof.png",
+              "page-06-governance.png",
+          ]
+          marts = list((root / "data/aggregate").glob("mart_p7_*.csv"))
+          screenshots = root / "docs/images"
+          assert (root / "powerbi_template/NHS_Primary_Care_Analytics.pbip").is_file()
+          assert len(marts) == 12, f"Expected 12 aggregate marts, found {len(marts)}"
+          for path in marts:
+              with path.open(encoding="utf-8-sig", newline="") as handle:
+                  assert next(csv.reader(handle)), f"Missing CSV header: {path}"
+          for image in expected:
+              assert (screenshots / image).is_file(), f"Missing dashboard screenshot: {image}"
+          print("Verified 12 aggregate CSVs, six screenshots and portable PBIP.")
+          PY
+
+      - name: Install Python smoke-test dependencies
+        working-directory: engineering_source
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Test data contracts, deterministic synthetic fixtures and PBIP logic
+        working-directory: engineering_source
+        run: python -m pytest -q tests/test_contracts.py tests/test_phase2_dataset.py tests/test_phase8_powerbi.py
