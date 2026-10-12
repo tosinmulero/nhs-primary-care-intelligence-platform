@@ -1,5 +1,8 @@
 # NHS Primary Care Data Management & Clinical Intelligence Platform
 
+[![NHS Primary Care Portfolio Quality](https://github.com/tosinmulero/nhs-primary-care-intelligence-platform/actions/workflows/portfolio-quality.yml/badge.svg)](https://github.com/tosinmulero/nhs-primary-care-intelligence-platform/actions/workflows/portfolio-quality.yml)
+
+
 > **Independent, entirely synthetic portfolio demonstration.** Not affiliated with or endorsed by the NHS or Guide Post Medical Group. Not intended for clinical use or real patient decisions.
 
 A Python, PostgreSQL, SQL, dbt and **Power BI PBIP/PBIR** portfolio case study modelling a hypothetical GP practice with 8,000 fictional patients. It demonstrates data quality controls, simulated correspondence/pathology review queues, management reporting and a six-page visual analytics experience.
@@ -65,6 +68,22 @@ Selected source code from the end-to-end Python/SQL/dbt project is available in 
 - Power BI marts are independently aggregated; not all slicers affect unrelated KPI visuals. Do not assume cross-page drill-through is implemented.
 - A local six-page visual verification and automated source checks were completed before packaging. Another computer should still run its own Power BI refresh validation.
 - The source is supplied for portfolio demonstration, not for clinical or production use.
+
+## Automated reproducibility checks
+
+The repository-level [Portfolio Quality GitHub Actions workflow](https://github.com/tosinmulero/nhs-primary-care-intelligence-platform/actions/workflows/portfolio-quality.yml) verifies that the portable Power BI template, 12 committed aggregate CSV marts and all six dashboard screenshots are present. It also runs **selected** offline Python smoke tests for synthetic data contracts, deterministic synthetic fixture generation and Power BI source logic.
+
+To reproduce those smoke tests on Windows using **VS Code** and Python 3.12:
+
+```powershell
+cd engineering_source
+python -m pip install -e ".[dev]"
+python -m pytest -q tests/test_contracts.py tests/test_phase2_dataset.py tests/test_phase8_powerbi.py
+```
+
+These checks **do not** validate PostgreSQL connectivity, dbt execution, all earlier phase tests or a Power BI Desktop refresh. The `engineering_source/` directory is a selected engineering snapshot; see [its README](engineering_source/README.md).
+
+---
 
 ## Technology
 
