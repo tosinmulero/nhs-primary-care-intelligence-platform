@@ -7,6 +7,12 @@
 
 A Python, PostgreSQL, SQL, dbt and **Power BI PBIP/PBIR** portfolio case study modelling a hypothetical GP practice with 8,000 fictional patients. It demonstrates data quality controls, simulated correspondence/pathology review queues, management reporting and a six-page visual analytics experience.
 
+## Recruiter quick review
+
+**[Read the dedicated portfolio case study](https://tosinmulero.github.io/data-analytics-portfolio/case-studies/nhs-primary-care-intelligence-platform.html)** · **[Open the evidence guide](docs/RECRUITER_GUIDE.md)** · [View a project visual](docs/images/page-01-executive.png)
+
+The evidence guide links the business question, documented results, methodology and source artefacts without relying on unverified claims.
+
 ## Executive dashboard
 
 ![Executive Practice Overview](docs/images/page-01-executive.png)
